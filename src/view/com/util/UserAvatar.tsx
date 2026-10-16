@@ -643,7 +643,13 @@ export {PreviewableUserAvatar}
 // manually string-replace to use the smaller ones
 // -prf
 function hackModifyThumbnailPath(uri: string, isEnabled: boolean): string {
-  return isEnabled ? convertCdnPreset(uri, 'avatar_thumbnail') : uri
+  /*
+   * The local AppView serves the avatar preset, but not the production CDN's
+   * avatar_thumbnail preset.
+   */
+  return isEnabled && !process.env.EXPO_PUBLIC_SERVICE_URL
+    ? convertCdnPreset(uri, 'avatar_thumbnail')
+    : uri
 }
 
 const styles = StyleSheet.create({

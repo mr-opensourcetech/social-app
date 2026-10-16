@@ -76,6 +76,34 @@ export function useSearchPostsV2Query({
        * dialog; see buildSearchPostsV2Filters for how the two sources combine.
        */
       const {q, ...embedded} = extractSearchPostsParams(query)
+      if (__DEV__ && process.env.EXPO_PUBLIC_SERVICE_URL) {
+        /*
+         * The local AppView has database-backed text search, but no hosted
+         * search-v2 rollout. Use its supported API without dropping filters.
+         */
+        const hasUnsupportedFilter =
+          Object.entries(filters ?? {}).some(
+            ([key, value]) => !!value && key !== 'author' && key !== 'from',
+          ) ||
+          Object.entries(embedded).some(
+            ([key, value]) => !!value && key !== 'author',
+          )
+        const author =
+          filters?.from === 'me'
+            ? client.did
+            : filters?.author || embedded.author
+        if (hasUnsupportedFilter || (author && /\s/.test(author))) {
+          throw new Error(
+            'This local server supports text and single-account searches. Remove the other filters and try again.',
+          )
+        }
+        return await client.call(app.bsky.feed.searchPosts, {
+          q: author ? `${q} from:${author}`.trim() : q,
+          sort,
+          limit: 25,
+          cursor: pageParam,
+        })
+      }
       /*
        * The generated params brand format-constrained strings (uri,
        * at-identifier, language) as template-literal types. The builder emits

@@ -10,11 +10,13 @@ import {type NavigationProp} from '#/lib/routes/types'
 import {useSession} from '#/state/session'
 import {useIsDrawerOpen, useSetDrawerOpen} from '#/state/shell'
 import {useCloseAllActiveElements} from '#/state/util'
+import {LoggedOut} from '#/view/com/auth/LoggedOut'
 import {ErrorBoundary} from '#/view/com/util/ErrorBoundary'
 import {Deactivated} from '#/screens/Deactivated'
 import {Takendown} from '#/screens/Takendown'
 import {atoms as a, select, useBreakpoints, useTheme} from '#/alf'
 import {AgeAssuranceRedirectDialog} from '#/components/ageAssurance/AgeAssuranceRedirectDialog'
+import {DemoAccess} from '#/components/DemoAccess'
 import {EmailDialog} from '#/components/dialogs/EmailDialog'
 import {LinkWarningDialog} from '#/components/dialogs/LinkWarning'
 import {MutedWordsDialog} from '#/components/dialogs/MutedWords'
@@ -40,6 +42,9 @@ import {DrawerContent} from './Drawer'
 
 function ShellInner() {
   const navigator = useNavigation<NavigationProp>()
+  const {hasSession} = useSession()
+  const localDemoLoggedOut =
+    __DEV__ && !!process.env.EXPO_PUBLIC_SERVICE_URL && !hasSession
   const closeAllActiveElements = useCloseAllActiveElements()
   const {state: policyUpdateState} = usePolicyUpdateContext()
   const welcomeModalControl = useWelcomeModal()
@@ -62,7 +67,11 @@ function ShellInner() {
   return (
     <>
       <ErrorBoundary>
-        <FlatNavigator layout={drawerLayout} />
+        {localDemoLoggedOut ? (
+          <LoggedOut />
+        ) : (
+          <FlatNavigator layout={drawerLayout} />
+        )}
       </ErrorBoundary>
       <Composer />
       <MutedWordsDialog />
@@ -74,7 +83,7 @@ function ShellInner() {
       <NuxDialogs />
       <GlobalReportDialog />
 
-      {welcomeModalControl.isOpen && (
+      {!localDemoLoggedOut && welcomeModalControl.isOpen && (
         <WelcomeModal control={welcomeModalControl} />
       )}
 
@@ -183,6 +192,7 @@ export function Shell() {
       )}
 
       <PassiveAnalytics />
+      <DemoAccess />
     </View>
   )
 }

@@ -71,6 +71,7 @@ import {DetectedLanguagesAdmonition} from './components/DetectedLanguagesAdmonit
 import {SearchAutocompleteInput} from './components/SearchAutocompleteInput'
 import {SearchHistory} from './components/SearchHistory'
 import {Explore} from './Explore'
+import {LocalExplore} from './LocalExplore'
 import {SearchResults} from './SearchResults'
 
 /**
@@ -736,7 +737,11 @@ let SearchScreenInner = ({
       onPageSelected={onPageSelected}
     />
   ) : hasSession ? (
-    <Explore focusSearchInput={focusSearchInput} headerHeight={headerHeight} />
+    __DEV__ && process.env.EXPO_PUBLIC_SERVICE_URL ? (
+      <LocalExplore />
+    ) : (
+      <Explore focusSearchInput={focusSearchInput} headerHeight={headerHeight} />
+    )
   ) : (
     <Layout.Center>
       <View style={a.flex_1}>
