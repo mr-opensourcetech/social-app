@@ -50,7 +50,11 @@ export function VerificationReminder({
             },
           ]}>
           <GradientFill gradient={tokens.gradients.primary} />
-          <ShieldIcon width={64} fill="white" style={[a.z_10]} />
+          <ShieldIcon
+            width={64}
+            fill={tokens.brand.onGradient}
+            style={[a.z_10]}
+          />
         </View>
       </View>
       <View style={[a.mb_xs, {height: 150 - dialogPadding}]} />

@@ -7,7 +7,7 @@ import {Trans} from '@lingui/react/macro'
 
 import {Logo} from '#/view/icons/Logo'
 import {Logotype} from '#/view/icons/Logotype'
-import {atoms as a, useTheme} from '#/alf'
+import {atoms as a, tokens, useTheme} from '#/alf'
 import {LinearGradientBackground} from '#/components/LinearGradientBackground'
 import {Text} from '#/components/Typography'
 import {IS_WEB} from '#/env'
@@ -49,7 +49,7 @@ export function QrCode({
               a.font_semi_bold,
               a.text_3xl,
               a.text_center,
-              {color: 'white'},
+              {color: tokens.brand.onGradient},
             ]}>
             {record.name}
           </Text>
@@ -59,7 +59,7 @@ export function QrCode({
             style={[
               a.font_semi_bold,
               a.text_center,
-              {color: 'white', fontSize: 18},
+              {color: tokens.brand.onGradient, fontSize: 18},
             ]}>
             <Trans>Join the conversation</Trans>
           </Text>
@@ -73,14 +73,18 @@ export function QrCode({
               a.flex_row,
               a.align_center,
               a.font_semi_bold,
-              {color: 'white', fontSize: 18, gap: 6},
+              {color: tokens.brand.onGradient, fontSize: 18, gap: 6},
             ]}>
             <Trans>
               on
               <View style={[a.flex_row, a.align_center, {gap: 6}]}>
-                <Logo allowVariants={false} width={25} fill="white" />
+                <Logo
+                  allowVariants={false}
+                  width={25}
+                  fill={tokens.brand.onGradient}
+                />
                 <View style={[{marginTop: 3.5}]}>
-                  <Logotype width={72} fill="white" />
+                  <Logotype width={72} fill={tokens.brand.onGradient} />
                 </View>
               </View>
             </Trans>

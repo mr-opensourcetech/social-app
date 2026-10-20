@@ -75,11 +75,16 @@ a[role='link'][data-no-underline='1']:hover {
   pointer-events: none;
 }
 .ProseMirror .mention {
-  color: #0085ff;
+  color: #a3472c;
 }
 .ProseMirror a,
 .ProseMirror .autolink {
-  color: #0085ff;
+  color: #a3472c;
+}
+.ProseMirror-dark .mention,
+.ProseMirror-dark a,
+.ProseMirror-dark .autolink {
+  color: #ffb199;
 }
 /* OLLIE: TODO -- this is not accessible */
 /* Remove focus state on inputs */

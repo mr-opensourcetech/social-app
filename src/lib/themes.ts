@@ -19,13 +19,13 @@ export const defaultTheme: Theme = {
       border: lightPalette.contrast_100,
     },
     primary: {
-      background: colors.blue3,
-      backgroundLight: colors.blue2,
-      text: colors.white,
-      textLight: colors.blue0,
-      textInverted: colors.blue3,
-      link: colors.blue0,
-      border: colors.blue4,
+      background: tokens.brand.gradientEnd,
+      backgroundLight: tokens.brand.gradientStart,
+      text: tokens.brand.onGradient,
+      textLight: tokens.brand.onGradient,
+      textInverted: lightPalette.primary_500,
+      link: lightPalette.primary_600,
+      border: lightPalette.primary_400,
     },
     secondary: {
       background: colors.green3,
@@ -285,7 +285,7 @@ export const darkTheme: Theme = {
     },
     primary: {
       ...defaultTheme.palette.primary,
-      textInverted: colors.blue2,
+      textInverted: darkPalette.primary_600,
     },
     secondary: {
       ...defaultTheme.palette.secondary,

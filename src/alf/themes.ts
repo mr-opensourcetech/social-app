@@ -4,9 +4,29 @@ import {
   DEFAULT_SUBDUED_PALETTE,
 } from '@bsky.app/alf'
 
+/**
+ * Solid companions for links, focus rings, and controls that cannot use a
+ * gradient. Keep the middle tones dark enough for text on light backgrounds.
+ */
+const primaryPalette = {
+  primary_25: '#FAF6F1',
+  primary_50: '#FFF0E9',
+  primary_100: '#FFDFD1',
+  primary_200: '#FFB199',
+  primary_300: '#F39B7F',
+  primary_400: '#DC7959',
+  primary_500: '#A3472C',
+  primary_600: '#8C3D26',
+  primary_700: '#75331F',
+  primary_800: '#5E291B',
+  primary_900: '#472218',
+  primary_950: '#361D16',
+  primary_975: '#291812',
+}
+
 const DEFAULT_THEMES = createThemes({
-  defaultPalette: DEFAULT_PALETTE,
-  subduedPalette: DEFAULT_SUBDUED_PALETTE,
+  defaultPalette: {...DEFAULT_PALETTE, ...primaryPalette},
+  subduedPalette: {...DEFAULT_SUBDUED_PALETTE, ...primaryPalette},
 })
 
 export const themes = {
