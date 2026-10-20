@@ -34,13 +34,13 @@ let NavSignupCard = ({}: {}): React.ReactNode => {
     <View style={[{maxWidth: 245}]}>
       <Link
         to="/"
-        label={_(msg`Oursky — Home`)}
+        label={_(msg({id: 'Oursky — Home', message: 'Oursky — Home'}))}
         style={[a.flex_row, a.align_center, a.gap_sm]}>
         <Logo allowVariants={false} width={32} />
         <Text style={[a.text_2xl, a.font_bold]}>{APP_NAME}</Text>
       </Link>
       <Text style={[a.text_sm, a.pt_sm]}>
-        <Trans>a Bluesky client</Trans>
+        <Trans id="a Bluesky client">a Bluesky client</Trans>
       </Text>
 
       <View style={[a.pt_lg]}>

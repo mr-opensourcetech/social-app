@@ -3,6 +3,7 @@ import {Keyboard, type TextInput, View} from 'react-native'
 import {LexAuthFactorError} from '@atproto/lex-password-session'
 import {Trans, useLingui} from '@lingui/react/macro'
 
+import {APP_NAME} from '#/lib/brand'
 import {DEFAULT_SERVICE, HITSLOP_10} from '#/lib/constants'
 import {useRequestNotificationsPermission} from '#/lib/notifications/notifications'
 import {cleanError, isNetworkError} from '#/lib/strings/errors'
@@ -29,6 +30,7 @@ import {Envelope_Stroke2_Corner0_Rounded as EmailIcon} from '#/components/icons/
 import {createStaticClick, InlineLinkText} from '#/components/Link'
 import {Loader} from '#/components/Loader'
 import {Text} from '#/components/Typography'
+import {IS_WEB} from '#/env'
 import {IS_IOS, IS_NATIVE} from '#/env'
 import {type com} from '#/lexicons'
 import {ConfirmHostingProviderDialog} from './components/ConfirmHostingProviderDialog'
@@ -267,6 +269,14 @@ export const LoginForm = ({
 
   return (
     <FormContainer testID="loginForm" titleText={<Trans>Sign in</Trans>}>
+      {IS_WEB && (
+        <View style={[a.gap_xs, a.pb_md]}>
+          <Text style={[a.text_2xl, a.font_bold]}>{APP_NAME}</Text>
+          <Text style={a.text_sm}>
+            <Trans id="a Bluesky client">a Bluesky client</Trans>
+          </Text>
+        </View>
+      )}
       <HostingProviderDialog
         control={serverInputControl}
         currentOverride={

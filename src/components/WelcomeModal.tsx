@@ -121,7 +121,7 @@ export function WelcomeModal({control}: WelcomeModalProps) {
                   </Text>
                 </View>
                 <Text style={[a.text_sm, {color: '#354358'}]}>
-                  <Trans>a Bluesky client</Trans>
+                  <Trans id="a Bluesky client">a Bluesky client</Trans>
                 </Text>
               </View>
               <View
