@@ -2,14 +2,14 @@
 
 {% block head_title %}
 {%- if profileView -%}
-  @{{ profileView.Handle }} on Bluesky
+  @{{ profileView.Handle }} — Oursky — a Bluesky client
 {%- else -%}
-  Bluesky
+  Oursky — a Bluesky client
 {%- endif -%}
 {% endblock %}
 
 {% block html_head_extra -%}
-  <meta property="og:site_name" content="Bluesky Social">
+  <meta property="og:site_name" content="Oursky — a Bluesky client">
   <meta property="og:type" content="profile">
 {%- if requestURI %}
   {% if canonicalURL %}

@@ -4,6 +4,7 @@ import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
 
+import {APP_NAME} from '#/lib/brand'
 import {useLoggedOutViewControls} from '#/state/shell/logged-out'
 import {useCloseAllActiveElements} from '#/state/util'
 import {Logo} from '#/view/icons/Logo'
@@ -31,9 +32,16 @@ let NavSignupCard = ({}: {}): React.ReactNode => {
 
   return (
     <View style={[{maxWidth: 245}]}>
-      <Link to="/" label="Bluesky - Home">
+      <Link
+        to="/"
+        label={_(msg({id: 'Oursky — Home', message: 'Oursky — Home'}))}
+        style={[a.flex_row, a.align_center, a.gap_sm]}>
         <Logo allowVariants={false} width={32} />
+        <Text style={[a.text_2xl, a.font_bold]}>{APP_NAME}</Text>
       </Link>
+      <Text style={[a.text_sm, a.pt_sm]}>
+        <Trans id="a Bluesky client">a Bluesky client</Trans>
+      </Text>
 
       <View style={[a.pt_lg]}>
         <Text

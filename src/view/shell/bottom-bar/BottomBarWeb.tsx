@@ -237,8 +237,11 @@ export function BottomBarWeb() {
               ]}>
               <View style={[a.flex_row, a.align_center, a.gap_md]}>
                 <Logo allowVariants={false} width={32} />
-                <View style={{paddingTop: 4}}>
+                <View style={[a.gap_xs]}>
                   <Logotype width={80} fill={t.atoms.text.color} />
+                  <Text style={[a.text_xs, t.atoms.text_contrast_medium]}>
+                    <Trans id="a Bluesky client">a Bluesky client</Trans>
+                  </Text>
                 </View>
               </View>
 
