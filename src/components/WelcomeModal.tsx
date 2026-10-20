@@ -5,6 +5,7 @@ import {Trans, useLingui} from '@lingui/react/macro'
 import * as FocusGuards from '@radix-ui/react-focus-guards'
 import * as FocusScope from '@radix-ui/react-focus-scope'
 
+import {APP_NAME} from '#/lib/brand'
 import {useLoggedOutViewControls} from '#/state/shell/logged-out'
 import {Logo} from '#/view/icons/Logo'
 import {atoms as a, flatten, useBreakpoints, web} from '#/alf'
@@ -100,7 +101,8 @@ export function WelcomeModal({control}: WelcomeModalProps) {
             <View style={[a.gap_2xl, a.align_center, a.p_4xl]}>
               <View
                 style={[
-                  a.flex_row,
+                  a.flex_col,
+                  a.gap_sm,
                   a.align_center,
                   a.justify_center,
                   a.w_full,
@@ -115,9 +117,12 @@ export function WelcomeModal({control}: WelcomeModalProps) {
                       a.user_select_none,
                       {color: '#354358', letterSpacing: -0.5},
                     ]}>
-                    Bluesky
+                    {APP_NAME}
                   </Text>
                 </View>
+                <Text style={[a.text_sm, {color: '#354358'}]}>
+                  <Trans>a Bluesky client</Trans>
+                </Text>
               </View>
               <View
                 style={[
