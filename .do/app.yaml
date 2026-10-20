@@ -1,0 +1,16 @@
+name: social-app
+region: sfo
+static_sites:
+  - name: web
+    github:
+      repo: mr-opensourcetech/social-app
+      branch: main
+      deploy_on_push: true
+    environment_slug: node-js
+    build_command: corepack enable && pnpm install --frozen-lockfile && pnpm build-web
+    output_dir: dist
+    catchall_document: index.html
+    envs:
+      - key: EXPO_PUBLIC_ENV
+        value: production
+        scope: BUILD_TIME
