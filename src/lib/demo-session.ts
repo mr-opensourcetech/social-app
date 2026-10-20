@@ -13,8 +13,7 @@ export function isLocalDemoAccount(account?: SessionAccount) {
   }
   try {
     return (
-      !account ||
-      new URL(account.service).origin === window.location.origin
+      !account || new URL(account.service).origin === window.location.origin
     )
   } catch {
     return false
@@ -49,9 +48,7 @@ export async function reconnectDemoAccount(): Promise<void> {
     account.did,
     ...previousAccounts.filter(isLocalDemoAccount).map(a => a.did),
   ])
-  await Promise.all(
-    [...localDids].map(did => clearPersistedQueryStorage(did)),
-  )
+  await Promise.all([...localDids].map(did => clearPersistedQueryStorage(did)))
   await persisted.write('session', {
     accounts: [
       ...previousAccounts.filter(a => !isLocalDemoAccount(a)),

@@ -1,10 +1,7 @@
 import {useState} from 'react'
 import {useLingui} from '@lingui/react/macro'
 
-import {
-  isLocalDemoAccount,
-  reconnectDemoAccount,
-} from '#/lib/demo-session'
+import {isLocalDemoAccount, reconnectDemoAccount} from '#/lib/demo-session'
 import {useSession, useSessionApi} from '#/state/session'
 import {Error} from '#/components/Error'
 import {EmojiSad_Stroke2_Corner0_Rounded as EmojiSadIcon} from '#/components/icons/Emoji'
@@ -31,9 +28,7 @@ export function DataUnavailableScreen() {
         }
         isRetrying={isReconnecting}
         secondaryAction={{
-          label: isReconnecting
-            ? l`Reconnecting…`
-            : l`Reconnect test user`,
+          label: isReconnecting ? l`Reconnecting…` : l`Reconnect test user`,
           onPress: async () => {
             setIsReconnecting(true)
             setReconnectFailed(false)
