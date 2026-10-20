@@ -13,6 +13,8 @@ import {
 
 import {choose} from '#/lib/functions'
 import {useTheme} from '#/lib/ThemeContext'
+import {flatten, tokens} from '#/alf'
+import {GradientFill} from '#/components/GradientFill'
 import {
   Pressable,
   type PressableStateCallbackType,
@@ -202,7 +204,13 @@ export function Button({
       accessibilityHint={accessibilityHint}
       accessibilityLabelledBy={accessibilityLabelledBy}
       onAccessibilityEscape={onAccessibilityEscape}>
-      {renderChildern}
+      {type === 'primary' && (
+        <GradientFill
+          gradient={tokens.gradients.primary}
+          style={{borderRadius: flatten([styles.outer, style])?.borderRadius}}
+        />
+      )}
+      {renderChildern()}
     </Pressable>
   )
 }

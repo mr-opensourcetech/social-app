@@ -7,22 +7,26 @@ export const color = {
   temp_purple_dark: tokens.labelerColor.purple_dark,
 } as const
 
+export const brand = {
+  gradientStart: '#FAF6F1',
+  gradientEnd: '#FFB199',
+  onGradient: '#3D241C',
+} as const
+
 export const gradients = {
   primary: {
     values: [
-      [0, '#054CFF'],
-      [0.4, '#1085FE'],
-      [0.6, '#1085FE'],
-      [1, '#59B9FF'],
+      [0, brand.gradientStart],
+      [1, brand.gradientEnd],
     ],
-    hover_value: '#1085FE',
+    hover_value: brand.gradientEnd,
   },
   sky: {
     values: [
-      [0, '#0A7AFF'],
-      [1, '#59B9FF'],
+      [0, brand.gradientStart],
+      [1, brand.gradientEnd],
     ],
-    hover_value: '#0A7AFF',
+    hover_value: brand.gradientEnd,
   },
   midnight: {
     values: [

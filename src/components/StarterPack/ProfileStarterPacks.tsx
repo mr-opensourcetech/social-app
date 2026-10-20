@@ -24,7 +24,7 @@ import {
 import {List, type ListRef} from '#/view/com/util/List'
 import {findListNativeTag} from '#/view/com/util/listNativeTag'
 import {FeedLoadingPlaceholder} from '#/view/com/util/LoadingPlaceholder'
-import {atoms as a, ios, useTheme} from '#/alf'
+import {atoms as a, ios, tokens, useTheme} from '#/alf'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {useDialogControl} from '#/components/Dialog'
 import {PlusSmall_Stroke2_Corner0_Rounded as Plus} from '#/components/icons/Plus'
@@ -287,10 +287,15 @@ function Empty() {
         {marginTop: a.border.borderWidth},
       ]}>
       <View style={[a.gap_xs]}>
-        <Text style={[a.font_semi_bold, a.text_lg, {color: 'white'}]}>
+        <Text
+          style={[
+            a.font_semi_bold,
+            a.text_lg,
+            {color: tokens.brand.onGradient},
+          ]}>
           <Trans>You haven't created a Starter Pack yet!</Trans>
         </Text>
-        <Text style={[a.text_md, {color: 'white'}]}>
+        <Text style={[a.text_md, {color: tokens.brand.onGradient}]}>
           <Trans>
             Starter Packs let you easily share your favorite feeds and people
             with your friends.
@@ -306,7 +311,7 @@ function Empty() {
           disabled={isGenerating}
           onPress={wrappedOpenConfirmDialog}
           style={{backgroundColor: 'transparent'}}>
-          <ButtonText style={{color: 'white'}}>
+          <ButtonText style={{color: tokens.brand.onGradient}}>
             <Trans>Make one for me</Trans>
           </ButtonText>
           {isGenerating && <Loader size="md" />}

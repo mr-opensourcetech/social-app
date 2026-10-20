@@ -3,7 +3,6 @@ import {AppState, type AppStateStatus, View} from 'react-native'
 import ReactNativeDeviceAttest from 'react-native-device-attest'
 import {KeyboardAvoidingView} from 'react-native-keyboard-controller'
 import Animated, {FadeIn, LayoutAnimationConfig} from 'react-native-reanimated'
-import {tokens} from '@bsky.app/alf'
 import {Trans, useLingui} from '@lingui/react/macro'
 
 import {FEEDBACK_FORM_URL} from '#/lib/constants'
@@ -22,7 +21,7 @@ import {
 import {StepCaptcha} from '#/screens/Signup/StepCaptcha'
 import {StepHandle} from '#/screens/Signup/StepHandle'
 import {StepInfo} from '#/screens/Signup/StepInfo'
-import {atoms as a, native, useBreakpoints, useTheme} from '#/alf'
+import {atoms as a, native, tokens, useBreakpoints, useTheme} from '#/alf'
 import {AppLanguageDropdown} from '#/components/AppLanguageDropdown'
 import {Divider} from '#/components/Divider'
 import {LinearGradientBackground} from '#/components/LinearGradientBackground'
@@ -147,10 +146,14 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
                   <LinearGradientBackground
                     style={[a.mx_lg, a.p_lg, a.gap_sm, a.rounded_sm]}>
                     <Text
-                      style={[a.font_semi_bold, a.text_xl, {color: 'white'}]}>
+                      style={[
+                        a.font_semi_bold,
+                        a.text_xl,
+                        {color: tokens.brand.onGradient},
+                      ]}>
                       {starterPack.record.name}
                     </Text>
-                    <Text style={[{color: 'white'}]}>
+                    <Text style={[{color: tokens.brand.onGradient}]}>
                       {starterPack.feeds?.length ? (
                         <Trans>
                           You'll follow the suggested users and feeds once you

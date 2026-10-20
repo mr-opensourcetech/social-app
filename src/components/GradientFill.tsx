@@ -22,6 +22,7 @@ export function GradientFill({
 
   return (
     <LinearGradient
+      pointerEvents="none"
       colors={gradient.values.map(c => c[1]) as [string, string, ...string[]]}
       locations={
         gradient.values.map(c => c[0]) as [number, number, ...number[]]

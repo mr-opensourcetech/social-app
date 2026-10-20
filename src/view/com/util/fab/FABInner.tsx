@@ -1,4 +1,4 @@
-import {type ComponentProps, type JSX, useRef} from 'react'
+import {cloneElement, type ComponentProps, type JSX, useRef} from 'react'
 import {
   type GestureResponderEvent,
   type Pressable,
@@ -13,7 +13,8 @@ import {PressableScale} from '#/lib/custom-animations/PressableScale'
 import {useHaptics} from '#/lib/haptics'
 import {useMinimalShellFabTransform} from '#/lib/hooks/useMinimalShellTransform'
 import {clamp} from '#/lib/numbers'
-import {atoms as a, ios, useBreakpoints, useTheme} from '#/alf'
+import {atoms as a, flatten, ios, tokens, useBreakpoints} from '#/alf'
+import {GradientFill} from '#/components/GradientFill'
 import {IS_WEB} from '#/env'
 
 /**
@@ -31,7 +32,6 @@ export interface FABProps extends ComponentProps<typeof Pressable> {
 export function FABInner({testID, icon, onPress, style, ...props}: FABProps) {
   const insets = useSafeAreaInsets()
   const {gtMobile} = useBreakpoints()
-  const t = useTheme()
   const haptics = useHaptics()
   const pressInHapticAt = useRef(0)
   const fabMinimalShellTransform = useMinimalShellFabTransform()
@@ -73,13 +73,17 @@ export function FABInner({testID, icon, onPress, style, ...props}: FABProps) {
         style={[
           a.rounded_full,
           size,
-          {backgroundColor: t.palette.primary_500},
+          {backgroundColor: tokens.brand.gradientEnd},
           a.align_center,
           a.justify_center,
           style,
         ]}
         {...props}>
-        {icon}
+        <GradientFill
+          gradient={tokens.gradients.primary}
+          style={{borderRadius: flatten([size, style])?.borderRadius}}
+        />
+        {cloneElement(icon, {fill: tokens.brand.onGradient})}
       </PressableScale>
     </Animated.View>
   )

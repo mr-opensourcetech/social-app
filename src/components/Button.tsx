@@ -21,7 +21,8 @@ import {
   type ViewStyle,
 } from 'react-native'
 
-import {atoms as a, flatten, select, useTheme} from '#/alf'
+import {atoms as a, flatten, tokens, useTheme} from '#/alf'
+import {GradientFill} from '#/components/GradientFill'
 import {type Props as SVGIconProps} from '#/components/icons/common'
 import {Text} from '#/components/Typography'
 
@@ -247,10 +248,10 @@ export const Button = forwardRef<React.ComponentRef<typeof View>, ButtonProps>(
         if (color === 'primary') {
           if (!disabled) {
             baseStyles.push({
-              backgroundColor: t.palette.primary_500,
+              backgroundColor: tokens.brand.gradientEnd,
             })
             hoverStyles.push({
-              backgroundColor: t.palette.primary_600,
+              backgroundColor: tokens.brand.gradientEnd,
             })
           } else {
             baseStyles.push({
@@ -602,6 +603,15 @@ export const Button = forwardRef<React.ComponentRef<typeof View>, ButtonProps>(
         onHoverOut={onHoverOut}
         onFocus={onFocus}
         onBlur={onBlur}>
+        {variant === 'solid' && color === 'primary' && !disabled && (
+          <GradientFill
+            gradient={tokens.gradients.primary}
+            style={{
+              borderRadius: flatten([baseStyles, style])?.borderRadius,
+              opacity: context.interacting ? 0.75 : 1,
+            }}
+          />
+        )}
         <Context.Provider value={context}>
           {typeof children === 'function' ? children(context) : children}
         </Context.Provider>
@@ -625,14 +635,10 @@ export function useSharedButtonTextStyles() {
     if (variant === 'solid') {
       if (color === 'primary') {
         if (!disabled) {
-          baseStyles.push({color: t.palette.white})
+          baseStyles.push({color: tokens.brand.onGradient})
         } else {
           baseStyles.push({
-            color: select(t.name, {
-              light: t.palette.white,
-              dim: t.atoms.text_inverted.color,
-              dark: t.atoms.text_inverted.color,
-            }),
+            color: t.palette.primary_600,
           })
         }
       } else if (color === 'secondary') {

@@ -19,7 +19,7 @@ import {
 import {LoggedOutScreenState} from '#/view/com/auth/LoggedOut'
 import {formatCount} from '#/view/com/util/numeric/format'
 import {Logo} from '#/view/icons/Logo'
-import {atoms as a, useTheme} from '#/alf'
+import {atoms as a, tokens, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
 import {useDialogControl} from '#/components/Dialog'
 import * as FeedCard from '#/components/FeedCard'
@@ -171,7 +171,11 @@ function LandingScreenLoaded({
             },
           ]}>
           <View style={[a.flex_row, a.gap_md, a.pb_sm]}>
-            <Logo allowVariants={false} width={76} fill="white" />
+            <Logo
+              allowVariants={false}
+              width={76}
+              fill={tokens.brand.onGradient}
+            />
           </View>
           <Text
             style={[
@@ -179,7 +183,7 @@ function LandingScreenLoaded({
               a.text_4xl,
               a.text_center,
               a.leading_tight,
-              {color: 'white'},
+              {color: tokens.brand.onGradient},
             ]}>
             {record.name}
           </Text>
@@ -188,7 +192,7 @@ function LandingScreenLoaded({
               a.text_center,
               a.font_semi_bold,
               a.text_md,
-              {color: 'white'},
+              {color: tokens.brand.onGradient},
             ]}>
             <Trans>Starter Pack by {`@${creator.handle}`}</Trans>
           </Text>

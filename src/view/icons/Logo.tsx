@@ -1,4 +1,4 @@
-import {forwardRef} from 'react'
+import {forwardRef, useId} from 'react'
 import {type TextProps} from 'react-native'
 import Svg, {
   Defs,
@@ -11,7 +11,7 @@ import Svg, {
 import {Image} from 'expo-image'
 
 import {useLogoVariant} from '#/view/icons/useLogoVariant'
-import {flatten, useTheme} from '#/alf'
+import {flatten, tokens, useTheme} from '#/alf'
 
 const ratio = 57 / 64
 
@@ -24,10 +24,15 @@ type Props = {
 export const Logo = forwardRef(function LogoImpl(props: Props, ref) {
   const t = useTheme()
   const {allowVariants = true, fill, ...rest} = props
-  const gradient = fill === 'sky'
+  const gradientId = useId()
   const styles = flatten(props.style)
+  const gradient =
+    (!fill && !styles?.color) ||
+    fill === 'sky' ||
+    fill === t.palette.primary_500 ||
+    fill === t.palette.primary_600
   const _fill = gradient
-    ? 'url(#sky)'
+    ? `url(#${gradientId})`
     : fill || styles?.color || t.palette.primary_500
   // @ts-expect-error it's fiiiiine
   const size = parseInt(rest.width || 32, 10)
@@ -60,9 +65,10 @@ export const Logo = forwardRef(function LogoImpl(props: Props, ref) {
       style={[{width: size, height: size * ratio}, styles]}>
       {gradient && (
         <Defs>
-          <LinearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <Stop offset="0" stopColor="#0A7AFF" stopOpacity="1" />
-            <Stop offset="1" stopColor="#59B9FF" stopOpacity="1" />
+          <LinearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+            {tokens.gradients.primary.values.map(([offset, stopColor]) => (
+              <Stop key={offset} offset={offset} stopColor={stopColor} />
+            ))}
           </LinearGradient>
         </Defs>
       )}
