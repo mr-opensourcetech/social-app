@@ -91,8 +91,8 @@ jobs:
           HEAD_REF: ${{ github.head_ref }}
           BASE_REF: ${{ github.base_ref }}
         run: |
-          git checkout $HEAD_REF
-          git checkout $BASE_REF
+          git switch "$HEAD_REF"
+          git switch "$BASE_REF"
 
       - name: 🔍 Get the base commit
         id: base-commit
