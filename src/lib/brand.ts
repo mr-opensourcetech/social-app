@@ -1,2 +1,2 @@
-export const APP_NAME = 'OpenSky'
-export const APP_TITLE = 'OpenSky — a Bluesky client'
+export const APP_NAME = 'Oursky'
+export const APP_TITLE = 'Oursky — a Bluesky client'

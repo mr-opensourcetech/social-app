@@ -34,7 +34,7 @@ let NavSignupCard = ({}: {}): React.ReactNode => {
     <View style={[{maxWidth: 245}]}>
       <Link
         to="/"
-        label={_(msg`OpenSky — Home`)}
+        label={_(msg`Oursky — Home`)}
         style={[a.flex_row, a.align_center, a.gap_sm]}>
         <Logo allowVariants={false} width={32} />
         <Text style={[a.text_2xl, a.font_bold]}>{APP_NAME}</Text>

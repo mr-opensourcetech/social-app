@@ -2,15 +2,15 @@
 
 {% block head_title %}
 {%- if feedView -%}
-  {{ feedView.DisplayName }} by @{{ feedView.Creator.Handle }} | OpenSky — a Bluesky client
+  {{ feedView.DisplayName }} by @{{ feedView.Creator.Handle }} | Oursky — a Bluesky client
 {%- else -%}
-  OpenSky — a Bluesky client
+  Oursky — a Bluesky client
 {%- endif -%}
 {% endblock %}
 
 {% block html_head_extra -%}
 {%- if feedView -%}
-  <meta property="og:site_name" content="OpenSky — a Bluesky client">
+  <meta property="og:site_name" content="Oursky — a Bluesky client">
   <meta property="og:type" content="website">
   {%- if requestURI %}
   <meta property="og:url" content="{{ requestURI }}">

@@ -2,11 +2,11 @@
 
 {% block head_title %}
 {%- if postView -%}
-  @{{ postView.Author.Handle }} — OpenSky — a Bluesky client
+  @{{ postView.Author.Handle }} — Oursky — a Bluesky client
 {%- elif requiresAuth and profileHandle -%}
-  @{{ profileHandle }} — OpenSky — a Bluesky client
+  @{{ profileHandle }} — Oursky — a Bluesky client
 {%- else -%}
-  OpenSky — a Bluesky client
+  Oursky — a Bluesky client
 {%- endif -%}
 {% endblock %}
 
