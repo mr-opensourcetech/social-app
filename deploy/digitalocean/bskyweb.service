@@ -1,0 +1,29 @@
+[Unit]
+Description=Bluesky production web client
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bluesky
+Group=bluesky
+WorkingDirectory=/opt/bluesky/current
+EnvironmentFile=/etc/bluesky/web.env
+Environment=GOMEMLIMIT=350MiB
+ExecStart=/opt/bluesky/current/bskyweb serve
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+MemoryMax=512M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+
+[Install]
+WantedBy=multi-user.target

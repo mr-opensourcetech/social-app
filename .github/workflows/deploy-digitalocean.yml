@@ -1,0 +1,107 @@
+name: DigitalOcean production
+
+on:
+  pull_request:
+    paths:
+      - deploy/digitalocean/**
+      - .github/workflows/deploy-digitalocean.yml
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: digitalocean-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - name: Compile existing translations for the release
+        run: pnpm intl:compile
+      - name: Build production web assets
+        run: pnpm build-web
+        env:
+          NODE_ENV: production
+          EXPO_PUBLIC_ENV: production
+          NODE_OPTIONS: --max-old-space-size=6144
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: bskyweb/go.mod
+          cache-dependency-path: bskyweb/go.sum
+      - name: Test and build the production server
+        working-directory: bskyweb
+        run: |
+          go test ./...
+          mkdir -p ../release
+          CGO_ENABLED=0 go build -trimpath -tags timetzdata -o ../release/bskyweb ./cmd/bskyweb
+      - name: Check deployment scripts
+        run: |
+          for script in deploy/digitalocean/*.sh; do bash -n "$script"; done
+          node --test deploy/digitalocean/activate-release.test.mjs
+          cp deploy/digitalocean/activate-release.sh release/
+          cd release && sha256sum bskyweb > SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: production-web-${{ github.sha }}
+          path: release/
+          retention-days: 7
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: production
+    concurrency:
+      group: digitalocean-production-release
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: production-web-${{ github.sha }}
+          path: release/
+      - name: Configure deployment SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DO_DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DO_KNOWN_HOSTS }}
+        run: |
+          test -n "$DEPLOY_SSH_KEY" && test -n "$DEPLOY_KNOWN_HOSTS"
+          install -d -m 0700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 0600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+      - name: Upload and activate the tested release
+        env:
+          DEPLOY_HOST: ${{ vars.DO_DEPLOY_HOST }}
+          REVISION: ${{ github.sha }}
+        run: |
+          [[ "$DEPLOY_HOST" =~ ^[a-zA-Z0-9][a-zA-Z0-9.-]*$ ]]
+          cd release && sha256sum -c SHA256SUMS && cd ..
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "deploy@$DEPLOY_HOST" \
+            "mkdir -p /opt/bluesky/releases/$REVISION"
+          scp -o BatchMode=yes -o StrictHostKeyChecking=yes release/bskyweb release/SHA256SUMS \
+            "deploy@$DEPLOY_HOST:/opt/bluesky/releases/$REVISION/"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "deploy@$DEPLOY_HOST" \
+            "cd /opt/bluesky/releases/$REVISION && sha256sum -c SHA256SUMS && chmod 0755 bskyweb"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes "deploy@$DEPLOY_HOST" \
+            bash -s -- "$REVISION" < release/activate-release.sh
+      - name: Check public HTTPS endpoint
+        env:
+          APP_URL: ${{ vars.DO_APP_URL }}
+        run: |
+          [[ "$APP_URL" == https://* ]]
+          curl --fail --silent --show-error --retry 3 --max-time 30 "$APP_URL" > /dev/null
+      - name: Remove runner SSH credentials
+        if: always()
+        run: rm -f ~/.ssh/id_ed25519 ~/.ssh/known_hosts
