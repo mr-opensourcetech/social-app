@@ -221,7 +221,7 @@ module.exports = function (_config) {
       },
       web: {
         bundler: 'metro',
-        favicon: './public/favicon.svg',
+        favicon: './public/favicon.png',
       },
       updates: {
         url: 'https://updates.bsky.app/manifest',
