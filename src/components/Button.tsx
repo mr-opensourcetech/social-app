@@ -638,7 +638,7 @@ export function useSharedButtonTextStyles() {
           baseStyles.push({color: tokens.brand.onGradient})
         } else {
           baseStyles.push({
-            color: t.palette.primary_600,
+            color: t.palette.primary_700,
           })
         }
       } else if (color === 'secondary') {

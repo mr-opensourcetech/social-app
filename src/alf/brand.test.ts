@@ -32,4 +32,13 @@ describe('Oursky brand', () => {
       ).toBeGreaterThanOrEqual(4.5)
     },
   )
+
+  it.each([themes.light, themes.dark, themes.dim])(
+    'keeps disabled primary labels readable in the $name theme',
+    theme => {
+      expect(
+        contrastRatio(theme.palette.primary_700, theme.palette.primary_200),
+      ).toBeGreaterThanOrEqual(4.5)
+    },
+  )
 })

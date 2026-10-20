@@ -4,6 +4,7 @@ import {
   type Pressable,
   type StyleProp,
   StyleSheet,
+  View,
   type ViewStyle,
 } from 'react-native'
 import Animated from 'react-native-reanimated'
@@ -83,7 +84,9 @@ export function FABInner({testID, icon, onPress, style, ...props}: FABProps) {
           gradient={tokens.gradients.primary}
           style={{borderRadius: flatten([size, style])?.borderRadius}}
         />
-        {cloneElement(icon, {fill: tokens.brand.onGradient})}
+        <View pointerEvents="none" style={a.z_10}>
+          {cloneElement(icon, {fill: tokens.brand.onGradient})}
+        </View>
       </PressableScale>
     </Animated.View>
   )
