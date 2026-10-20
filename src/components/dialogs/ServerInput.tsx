@@ -18,7 +18,8 @@ import {InlineLinkText} from '#/components/Link'
 import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
 
-type SegmentedControlOptions = typeof BSKY_SERVICE | 'custom'
+/** A configured service URL or the custom-address option. */
+type SegmentedControlOptions = string
 
 export function ServerInputDialog({
   control,

@@ -27,7 +27,8 @@ export function LocalExplore() {
   const moderationOpts = useModerationOpts()
   const {data, isLoading, isFetching, error, refetch} = useQuery({
     queryKey: ['local-explore-people', currentAccount?.did],
-    queryFn: () => client.call(app.bsky.actor.searchActors, {q: '', limit: 100}),
+    queryFn: () =>
+      client.call(app.bsky.actor.searchActors, {q: '', limit: 100}),
     staleTime: 30_000,
   })
   const profiles = (data?.actors ?? [])
@@ -52,7 +53,7 @@ export function LocalExplore() {
       testID="localExplore"
       desktopFixedHeight
       data={moderationOpts ? profiles : []}
-      keyExtractor={profile => profile.did}
+      keyExtractor={(profile: (typeof profiles)[number]) => profile.did}
       contentContainerStyle={{paddingBottom: 100}}
       keyboardShouldPersistTaps="handled"
       refreshing={isFetching && !isLoading}

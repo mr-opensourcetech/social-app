@@ -740,7 +740,10 @@ let SearchScreenInner = ({
     __DEV__ && process.env.EXPO_PUBLIC_SERVICE_URL ? (
       <LocalExplore />
     ) : (
-      <Explore focusSearchInput={focusSearchInput} headerHeight={headerHeight} />
+      <Explore
+        focusSearchInput={focusSearchInput}
+        headerHeight={headerHeight}
+      />
     )
   ) : (
     <Layout.Center>

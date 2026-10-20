@@ -28,13 +28,19 @@ export function DemoAccess() {
     async function check() {
       try {
         const response = await fetch('/demo/status')
-        const status = await response.json()
+        const status: unknown = await response.json()
+        const isReady =
+          response.ok &&
+          typeof status === 'object' &&
+          status !== null &&
+          'ready' in status &&
+          status.ready === true
         if (!cancelled) {
-          setReady(response.ok && status.ready === true)
-          if (!status.ready) timer = setTimeout(check, 2000)
+          setReady(isReady)
+          if (!isReady) timer = setTimeout(() => void check(), 2000)
         }
       } catch {
-        if (!cancelled) timer = setTimeout(check, 2000)
+        if (!cancelled) timer = setTimeout(() => void check(), 2000)
       }
     }
     void check()
