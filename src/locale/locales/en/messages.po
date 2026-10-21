@@ -311,7 +311,7 @@ msgid "{0} joined the group"
 msgstr "{0} joined the group"
 
 #. placeholder {0}: formatCount(i18n, JOINED_THIS_WEEK)
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:222
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:226
 msgid "{0} joined this week"
 msgstr ""
 
@@ -954,7 +954,7 @@ msgstr "{name}'s favorite feeds and people - join me!"
 msgid "{name}’s Starter Pack"
 msgstr "{name}’s Starter Pack"
 
-#: src/view/shell/bottom-bar/BottomBarWeb.tsx:342
+#: src/view/shell/bottom-bar/BottomBarWeb.tsx:345
 msgid "{notificationCount, plural, one {# unread item} other {# unread items}}"
 msgstr ""
 
@@ -1264,7 +1264,7 @@ msgstr ""
 msgid "24 hours"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:419
+#: src/screens/Login/LoginForm.tsx:429
 msgid "2FA Confirmation"
 msgstr ""
 
@@ -1279,6 +1279,15 @@ msgstr ""
 #: src/components/dialogs/MutedWords.tsx:563
 msgid "7 days"
 msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/WelcomeModal.tsx:124
+#: src/screens/Login/LoginForm.tsx:276
+#: src/view/com/auth/SplashScreen.web.tsx:98
+#: src/view/shell/bottom-bar/BottomBarWeb.tsx:243
+#: src/view/shell/NavSignupCard.tsx:43
+msgid "a Bluesky client"
+msgstr "a Bluesky client"
 
 #: src/screens/Onboarding/StepFinished/ValuePropositionPager.shared.tsx:27
 msgid "A collection of popular feeds you can find on Bluesky, including News, Booksky, Game Dev, Blacksky, and Fountain Pens"
@@ -1849,6 +1858,10 @@ msgstr ""
 msgid "Age assurance only takes a few minutes."
 msgstr "Age assurance only takes a few minutes."
 
+#: src/components/DemoAccess.web.tsx:106
+msgid "Alex Morgan · @alex.test · No password needed"
+msgstr "Alex Morgan · @alex.test · No password needed"
+
 #: src/components/dialogs/EmailDialog/screens/Update.tsx:220
 msgid "alice@example.com"
 msgstr ""
@@ -1957,7 +1970,7 @@ msgstr ""
 msgid "Already have a code?"
 msgstr ""
 
-#: src/components/WelcomeModal.tsx:191
+#: src/components/WelcomeModal.tsx:199
 msgid "Already have an account?"
 msgstr ""
 
@@ -2028,7 +2041,7 @@ msgstr ""
 msgid "An error occurred while fetching the feed."
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:369
+#: src/components/StarterPack/ProfileStarterPacks.tsx:374
 msgid "An error occurred while generating your Starter Pack. Want to try again?"
 msgstr "An error occurred while generating your Starter Pack. Want to try again?"
 
@@ -2524,8 +2537,8 @@ msgstr "Awaiting review"
 #: src/screens/Login/ChooseAccountForm.tsx:99
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:128
-#: src/screens/Login/LoginForm.tsx:486
-#: src/screens/Login/LoginForm.tsx:491
+#: src/screens/Login/LoginForm.tsx:496
+#: src/screens/Login/LoginForm.tsx:501
 #: src/screens/Login/SetNewPasswordForm.tsx:136
 #: src/screens/Login/SetNewPasswordForm.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:161
@@ -2781,8 +2794,8 @@ msgstr ""
 msgid "bloomscrolling booksky"
 msgstr "bloomscrolling booksky"
 
-#: src/components/dialogs/ServerInput.tsx:144
-#: src/components/dialogs/ServerInput.tsx:146
+#: src/components/dialogs/ServerInput.tsx:145
+#: src/components/dialogs/ServerInput.tsx:147
 #: src/screens/CustomFeed/components/CustomFeedHeader.tsx:522
 msgid "Bluesky"
 msgstr ""
@@ -2800,12 +2813,12 @@ msgstr ""
 msgid "Bluesky helps friends find each other by creating an encoded digital fingerprint, called a \"hash\", and then looking for matching hashes."
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:214
+#: src/components/dialogs/ServerInput.tsx:215
 #: src/screens/Login/components/HostingProviderDialog.tsx:236
 msgid "Bluesky is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:162
+#: src/components/dialogs/ServerInput.tsx:163
 msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
 msgstr ""
 
@@ -2842,7 +2855,7 @@ msgstr ""
 msgid "Bluesky stores your contacts as encoded data. Removing your contacts will immediately delete this data."
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:338
+#: src/components/StarterPack/ProfileStarterPacks.tsx:343
 msgid "Bluesky will choose a set of recommended accounts from people in your network."
 msgstr ""
 
@@ -3085,7 +3098,7 @@ msgstr ""
 msgid "Cancel reply"
 msgstr "Cancel reply"
 
-#: src/screens/Search/Shell.tsx:592
+#: src/screens/Search/Shell.tsx:593
 msgid "Cancel search"
 msgstr ""
 
@@ -3148,7 +3161,7 @@ msgstr ""
 msgid "Change Handle"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:580
+#: src/screens/Login/LoginForm.tsx:590
 msgid "Change hosting provider"
 msgstr "Change hosting provider"
 
@@ -3332,7 +3345,7 @@ msgstr "Check for updates"
 msgid "Check my status"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:438
+#: src/screens/Login/LoginForm.tsx:448
 msgid "Check your email for a sign in code and enter it here."
 msgstr ""
 
@@ -3371,7 +3384,7 @@ msgstr ""
 msgid "Choose Feeds"
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:347
+#: src/components/StarterPack/ProfileStarterPacks.tsx:352
 msgid "Choose for me"
 msgstr ""
 
@@ -3400,7 +3413,7 @@ msgstr "Choose who can join this group chat and how."
 msgid "Choose who to invite"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:134
+#: src/components/dialogs/ServerInput.tsx:135
 #: src/screens/Login/components/HostingProviderDialog.tsx:155
 msgid "Choose your hosting provider"
 msgstr "Choose your hosting provider"
@@ -3413,7 +3426,7 @@ msgstr ""
 msgid "Choose your password"
 msgstr ""
 
-#: src/screens/Signup/index.tsx:193
+#: src/screens/Signup/index.tsx:196
 msgid "Choose your username"
 msgstr ""
 
@@ -3589,7 +3602,7 @@ msgstr "Close banner"
 msgid "Close dialog"
 msgstr ""
 
-#: src/view/shell/index.web.tsx:128
+#: src/view/shell/index.web.tsx:137
 msgid "Close drawer menu"
 msgstr ""
 
@@ -3625,7 +3638,7 @@ msgstr "Close the incoming requests banner"
 msgid "Close this dialog"
 msgstr ""
 
-#: src/components/WelcomeModal.tsx:216
+#: src/components/WelcomeModal.tsx:224
 msgid "Close welcome modal"
 msgstr ""
 
@@ -3686,7 +3699,7 @@ msgstr ""
 msgid "Complete onboarding and start using your account"
 msgstr ""
 
-#: src/screens/Signup/index.tsx:195
+#: src/screens/Signup/index.tsx:198
 msgid "Complete the challenge"
 msgstr ""
 
@@ -3739,12 +3752,12 @@ msgstr ""
 msgid "Connecting to service..."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:517
+#: src/screens/Login/LoginForm.tsx:527
 msgid "Connecting to service…"
 msgstr "Connecting to service…"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:142
-#: src/screens/Login/LoginForm.tsx:523
+#: src/screens/Login/LoginForm.tsx:533
 msgid "Connecting…"
 msgstr "Connecting…"
 
@@ -3764,8 +3777,8 @@ msgid "Contact our support team"
 msgstr ""
 
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:160
-#: src/screens/Signup/index.tsx:241
 #: src/screens/Signup/index.tsx:244
+#: src/screens/Signup/index.tsx:247
 msgid "Contact support"
 msgstr ""
 
@@ -3932,7 +3945,7 @@ msgstr "Conversation with {authorName}"
 msgid "Copied build version to clipboard"
 msgstr ""
 
-#: src/screens/Search/Shell.tsx:512
+#: src/screens/Search/Shell.tsx:513
 msgid "Copied link to clipboard"
 msgstr "Copied link to clipboard"
 
@@ -4111,6 +4124,10 @@ msgstr ""
 msgid "Could not leave chat."
 msgstr "Could not leave chat."
 
+#: src/screens/Search/LocalExplore.tsx:95
+msgid "Could not load accounts."
+msgstr "Could not load accounts."
+
 #: src/screens/CustomFeed/index.tsx:72
 msgid "Could not load feed"
 msgstr ""
@@ -4141,6 +4158,10 @@ msgstr ""
 #: src/features/inviteFriends/InviteFriendsDialogInner.tsx:64
 msgid "Could not share – please try again"
 msgstr "Could not share – please try again"
+
+#: src/components/DemoAccess.web.tsx:110
+msgid "Could not sign in to the local demo. Please try again."
+msgstr "Could not sign in to the local demo. Please try again."
 
 #: src/state/queries/moderation-inbox.ts:321
 #: src/state/queries/notifications/settings.ts:123
@@ -4188,7 +4209,7 @@ msgstr "cows pigs"
 #: src/components/dialogs/StarterPackDialog.tsx:107
 #: src/components/dialogs/StarterPackDialog.tsx:204
 #: src/components/dms/InitiateChatFlow.tsx:607
-#: src/components/StarterPack/ProfileStarterPacks.tsx:328
+#: src/components/StarterPack/ProfileStarterPacks.tsx:333
 msgid "Create"
 msgstr ""
 
@@ -4206,29 +4227,29 @@ msgid "Create a QR code for a Starter Pack"
 msgstr "Create a QR code for a Starter Pack"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:206
-#: src/components/StarterPack/ProfileStarterPacks.tsx:315
+#: src/components/StarterPack/ProfileStarterPacks.tsx:320
 #: src/Navigation.tsx:590
 #: src/view/screens/Profile.tsx:575
 #: src/view/screens/Profile.tsx:576
 msgid "Create a Starter Pack"
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:302
+#: src/components/StarterPack/ProfileStarterPacks.tsx:307
 msgid "Create a Starter Pack for me"
 msgstr "Create a Starter Pack for me"
 
-#: src/components/WelcomeModal.tsx:157
-#: src/components/WelcomeModal.tsx:165
+#: src/components/WelcomeModal.tsx:163
+#: src/components/WelcomeModal.tsx:170
 #: src/screens/Messages/JoinRequest.tsx:318
-#: src/screens/Signup/index.tsx:139
+#: src/screens/Signup/index.tsx:138
 #: src/view/com/auth/SplashScreen.tsx:108
 #: src/view/com/auth/SplashScreen.web.tsx:116
 #: src/view/shell/bottom-bar/BottomBar.tsx:355
 #: src/view/shell/bottom-bar/BottomBar.tsx:359
-#: src/view/shell/bottom-bar/BottomBarWeb.tsx:248
-#: src/view/shell/bottom-bar/BottomBarWeb.tsx:253
-#: src/view/shell/NavSignupCard.tsx:48
-#: src/view/shell/NavSignupCard.tsx:53
+#: src/view/shell/bottom-bar/BottomBarWeb.tsx:251
+#: src/view/shell/bottom-bar/BottomBarWeb.tsx:256
+#: src/view/shell/NavSignupCard.tsx:56
+#: src/view/shell/NavSignupCard.tsx:61
 msgid "Create account"
 msgstr ""
 
@@ -4239,8 +4260,8 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:302
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:309
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:306
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:313
 msgid "Create an account without using this Starter Pack"
 msgstr "Create an account without using this Starter Pack"
 
@@ -4338,8 +4359,8 @@ msgstr "Current beta features"
 msgid "Current chat"
 msgstr "Current chat"
 
-#: src/components/dialogs/ServerInput.tsx:152
-#: src/components/dialogs/ServerInput.tsx:154
+#: src/components/dialogs/ServerInput.tsx:153
+#: src/components/dialogs/ServerInput.tsx:155
 msgid "Custom"
 msgstr ""
 
@@ -4808,8 +4829,8 @@ msgstr ""
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
 #: src/components/dialogs/NotificationSettingsDialog.tsx:106
-#: src/components/dialogs/ServerInput.tsx:237
-#: src/components/dialogs/ServerInput.tsx:239
+#: src/components/dialogs/ServerInput.tsx:238
+#: src/components/dialogs/ServerInput.tsx:240
 #: src/components/dms/AfterReportConversationDialog.tsx:164
 #: src/components/dms/AfterReportDialog.tsx:145
 #: src/components/forms/DateField/index.tsx:136
@@ -4847,7 +4868,7 @@ msgstr ""
 msgid "Download"
 msgstr "Download"
 
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:321
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:325
 msgid "Download Bluesky"
 msgstr ""
 
@@ -5266,7 +5287,7 @@ msgstr ""
 msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:331
+#: src/screens/Login/LoginForm.tsx:341
 msgid "Enter the username or email address you used when you created your account"
 msgstr ""
 
@@ -5279,7 +5300,7 @@ msgstr ""
 msgid "Enter your email address"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:379
+#: src/screens/Login/LoginForm.tsx:389
 #: src/screens/Settings/components/DeleteAccountDialog.tsx:295
 msgid "Enter your password"
 msgstr ""
@@ -5452,16 +5473,21 @@ msgstr ""
 
 #: src/Navigation.tsx:799
 #: src/screens/Atmosphere.tsx:43
-#: src/screens/Search/Shell.tsx:549
+#: src/screens/Search/LocalExplore.tsx:64
+#: src/screens/Search/Shell.tsx:550
 #: src/view/shell/desktop/LeftNav.tsx:692
 #: src/view/shell/Drawer.tsx:494
 msgid "Explore"
 msgstr ""
 
-#: src/components/WelcomeModal.tsx:170
-#: src/components/WelcomeModal.tsx:179
+#: src/components/WelcomeModal.tsx:175
+#: src/components/WelcomeModal.tsx:187
 msgid "Explore the app"
 msgstr ""
+
+#: src/components/DemoAccess.web.tsx:84
+msgid "Explore the app with a ready-to-use account and populated feed."
+msgstr "Explore the app with a ready-to-use account and populated feed."
 
 #: src/screens/Messages/Settings.tsx:329
 #: src/screens/Messages/Settings.tsx:338
@@ -5535,7 +5561,7 @@ msgstr ""
 
 #: src/components/Lightbox/Lightbox.web.tsx:308
 #: src/features/inviteFriends/InviteFriendsDialogInner.tsx:131
-#: src/screens/Search/Shell.tsx:513
+#: src/screens/Search/Shell.tsx:514
 msgid "Failed to copy link"
 msgstr "Failed to copy link"
 
@@ -6049,7 +6075,7 @@ msgstr ""
 msgid "Find people you know"
 msgstr "Find people you know"
 
-#: src/screens/Search/Shell.tsx:765
+#: src/screens/Search/Shell.tsx:773
 msgid "Find posts, users, and feeds on Bluesky"
 msgstr ""
 
@@ -6341,8 +6367,8 @@ msgstr ""
 msgid "Forgot Password"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:404
-#: src/screens/Login/LoginForm.tsx:411
+#: src/screens/Login/LoginForm.tsx:414
+#: src/screens/Login/LoginForm.tsx:421
 msgid "Forgot password?"
 msgstr ""
 
@@ -6378,7 +6404,7 @@ msgstr ""
 msgid "From these people"
 msgstr "From these people"
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:335
+#: src/components/StarterPack/ProfileStarterPacks.tsx:340
 msgid "Generate a Starter Pack"
 msgstr "Generate a Starter Pack"
 
@@ -6506,8 +6532,8 @@ msgstr "Get notified when a label is added to your account and posts."
 msgid "Get notified when someone posts"
 msgstr ""
 
-#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:71
-#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:81
+#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:75
+#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:85
 #: src/screens/Messages/components/InviteLinkDialog.tsx:217
 #: src/screens/Messages/components/InviteLinkDialog.tsx:224
 msgid "Get started"
@@ -6828,7 +6854,7 @@ msgstr ""
 msgid "Have we got your location wrong? <0>Tap here to update your location with GPS.</0>"
 msgstr "Have we got your location wrong? <0>Tap here to update your location with GPS.</0>"
 
-#: src/screens/Signup/index.tsx:239
+#: src/screens/Signup/index.tsx:242
 msgid "Having trouble?"
 msgstr ""
 
@@ -7038,19 +7064,19 @@ msgstr ""
 msgid "Host:"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:138
+#: src/components/dialogs/ServerInput.tsx:139
 #: src/screens/Login/components/HostingProviderDialog.tsx:159
 #: src/screens/Login/ForgotPasswordForm.tsx:84
-#: src/screens/Login/LoginForm.tsx:595
+#: src/screens/Login/LoginForm.tsx:605
 msgid "Hosting provider"
 msgstr ""
 
 #. placeholder {0}: toNiceHostingUrl(state.pdsUrl)
-#: src/screens/Login/LoginForm.tsx:591
+#: src/screens/Login/LoginForm.tsx:601
 msgid "Hosting provider: {0}"
 msgstr "Hosting provider: {0}"
 
-#: src/screens/Login/LoginForm.tsx:593
+#: src/screens/Login/LoginForm.tsx:603
 msgid "Hosting provider: Bluesky"
 msgstr "Hosting provider: Bluesky"
 
@@ -7143,7 +7169,7 @@ msgstr ""
 msgid "If you want to restrict who can receive notifications for your account's activity, you can change this in <0>Settings → Privacy and Security</0>."
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:210
+#: src/components/dialogs/ServerInput.tsx:211
 msgid "If you're a developer, you can host your own server."
 msgstr ""
 
@@ -7337,7 +7363,7 @@ msgstr "Include posts made until this date"
 msgid "Include video timestamp ({videoTimestamp})"
 msgstr "Include video timestamp ({videoTimestamp})"
 
-#: src/screens/Login/LoginForm.tsx:158
+#: src/screens/Login/LoginForm.tsx:160
 msgid "Incorrect username or password"
 msgstr ""
 
@@ -7345,7 +7371,7 @@ msgstr ""
 msgid "Input new password"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:435
+#: src/screens/Login/LoginForm.tsx:445
 msgid "Input the code which has been emailed to you"
 msgstr ""
 
@@ -7377,7 +7403,7 @@ msgstr "Introducing group chats"
 msgid "Introducing saved posts AKA bookmarks"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:149
+#: src/screens/Login/LoginForm.tsx:151
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:78
 msgid "Invalid 2FA confirmation code."
 msgstr ""
@@ -7528,8 +7554,8 @@ msgstr ""
 msgid "Join"
 msgstr "Join"
 
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:202
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:207
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:206
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:211
 #: src/screens/StarterPack/StarterPackScreen.tsx:467
 #: src/screens/StarterPack/StarterPackScreen.tsx:477
 msgid "Join Bluesky"
@@ -7546,7 +7572,7 @@ msgid "Join request rescinded."
 msgstr "Join request rescinded."
 
 #: src/components/StarterPack/QrCode.tsx:64
-#: src/view/shell/NavSignupCard.tsx:41
+#: src/view/shell/NavSignupCard.tsx:49
 msgid "Join the conversation"
 msgstr ""
 
@@ -7698,7 +7724,7 @@ msgctxt "english-only-resource"
 msgid "Learn more about importing contacts"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:220
+#: src/components/dialogs/ServerInput.tsx:221
 #: src/screens/Login/components/HostingProviderDialog.tsx:241
 msgid "Learn more about self hosting your PDS."
 msgstr ""
@@ -7740,7 +7766,7 @@ msgstr ""
 msgid "Learn more in your <0>account settings.</0>"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:222
+#: src/components/dialogs/ServerInput.tsx:223
 #: src/components/moderation/ContentHider.tsx:244
 #: src/screens/Login/components/HostingProviderDialog.tsx:243
 msgid "Learn more."
@@ -7808,7 +7834,7 @@ msgstr "Left group chat."
 msgid "left to go."
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:352
+#: src/components/StarterPack/ProfileStarterPacks.tsx:357
 msgid "Let me choose"
 msgstr ""
 
@@ -8195,6 +8221,10 @@ msgstr "Loads more people into this list"
 msgid "Loads the posts missing between here and the posts below"
 msgstr "Loads the posts missing between here and the posts below"
 
+#: src/components/DemoAccess.web.tsx:81
+msgid "Local test environment"
+msgstr "Local test environment"
+
 #: src/screens/Messages/ConversationSettings/index.tsx:562
 msgid "Lock"
 msgstr "Lock"
@@ -8258,7 +8288,7 @@ msgstr "Love GIFs"
 msgid "Make adjustments to email settings for your account"
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:310
+#: src/components/StarterPack/ProfileStarterPacks.tsx:315
 msgid "Make one for me"
 msgstr ""
 
@@ -8332,8 +8362,8 @@ msgstr "Marked all chats as read"
 msgid "Marked all requests as read"
 msgstr "Marked all requests as read"
 
-#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:85
-#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:92
+#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:89
+#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:96
 msgid "Maybe later"
 msgstr ""
 
@@ -8765,7 +8795,7 @@ msgstr "Navigate to Starter Pack"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:148
 #: src/screens/Login/ForgotPasswordForm.tsx:173
-#: src/screens/Login/LoginForm.tsx:530
+#: src/screens/Login/LoginForm.tsx:540
 msgid "Navigates to the next screen"
 msgstr ""
 
@@ -8966,7 +8996,7 @@ msgstr "New reply from <0/>"
 msgid "New Starter Pack"
 msgstr "New Starter Pack"
 
-#: src/screens/Login/LoginForm.tsx:544
+#: src/screens/Login/LoginForm.tsx:554
 msgid "New to Bluesky? <0>Sign up</0>"
 msgstr "New to Bluesky? <0>Sign up</0>"
 
@@ -9183,6 +9213,10 @@ msgstr ""
 #: src/screens/Messages/components/ChatLocked.tsx:77
 msgid "No one can send messages"
 msgstr "No one can send messages"
+
+#: src/screens/Search/LocalExplore.tsx:109
+msgid "No other accounts yet."
+msgstr "No other accounts yet."
 
 #: src/screens/Search/components/AdvancedSearchDialog/RepliesDropdown.tsx:22
 #: src/screens/Search/components/AdvancedSearchDialog/RepliesDropdown.tsx:27
@@ -9588,8 +9622,8 @@ msgid "Oops, this profile doesn't exist. Try scanning another one."
 msgstr "Oops, this profile doesn't exist. Try scanning another one."
 
 #: src/components/Lists.tsx:184
-#: src/components/StarterPack/ProfileStarterPacks.tsx:361
-#: src/components/StarterPack/ProfileStarterPacks.tsx:368
+#: src/components/StarterPack/ProfileStarterPacks.tsx:366
+#: src/components/StarterPack/ProfileStarterPacks.tsx:373
 #: src/screens/Settings/AppPasswords.tsx:60
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:108
 #: src/view/screens/Profile.tsx:132
@@ -9779,7 +9813,7 @@ msgstr "Opens {displayName} feed"
 msgid "Opens a dialog to add a content warning to your post"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:581
+#: src/screens/Login/LoginForm.tsx:591
 msgid "Opens a dialog to change the hosting provider you sign in to"
 msgstr "Opens a dialog to change the hosting provider you sign in to"
 
@@ -10015,6 +10049,11 @@ msgstr ""
 msgid "Our moderators have reviewed reports and decided to disable your access to chats on Bluesky."
 msgstr ""
 
+#. js-lingui-explicit-id
+#: src/view/shell/NavSignupCard.tsx:37
+msgid "Oursky — Home"
+msgstr "Oursky — Home"
+
 #: src/components/dialogs/StarterPackDialog.tsx:372
 msgid "Owner"
 msgstr "Owner"
@@ -10035,8 +10074,8 @@ msgstr ""
 msgid "Party GIFs"
 msgstr "Party GIFs"
 
-#: src/screens/Login/LoginForm.tsx:359
-#: src/screens/Login/LoginForm.tsx:365
+#: src/screens/Login/LoginForm.tsx:369
+#: src/screens/Login/LoginForm.tsx:375
 #: src/screens/Settings/AccountSettings.tsx:124
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/components/DeleteAccountDialog.tsx:290
@@ -10074,6 +10113,7 @@ msgid "Pause video"
 msgstr ""
 
 #: src/screens/ProfileList/index.tsx:164
+#: src/screens/Search/LocalExplore.tsx:84
 #: src/screens/Search/SearchResults.tsx:102
 #: src/screens/StarterPack/StarterPackScreen.tsx:192
 msgid "People"
@@ -10346,11 +10386,11 @@ msgstr ""
 msgid "Please enter your new email address."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:190
+#: src/screens/Login/LoginForm.tsx:192
 msgid "Please enter your password"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:184
+#: src/screens/Login/LoginForm.tsx:186
 msgid "Please enter your username"
 msgstr ""
 
@@ -10411,7 +10451,7 @@ msgstr ""
 msgid "Please use the native app to sync your contacts."
 msgstr ""
 
-#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:59
+#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:63
 msgid "Please verify your email"
 msgstr ""
 
@@ -10420,6 +10460,7 @@ msgid "Please write your message below:"
 msgstr ""
 
 #: src/lib/interests.ts:70
+#: src/screens/Search/LocalExplore.tsx:47
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:246
 msgid "Politics"
 msgstr ""
@@ -10605,6 +10646,10 @@ msgstr ""
 #: src/components/ageAssurance/AgeAssuranceInitDialog.tsx:301
 msgid "Preferred language"
 msgstr ""
+
+#: src/components/DemoAccess.web.tsx:101
+msgid "Preparing demo data…"
+msgstr "Preparing demo data…"
 
 #: src/screens/Messages/components/MessageListError.tsx:18
 msgid "Press to attempt reconnection"
@@ -10906,11 +10951,11 @@ msgstr ""
 msgid "Read the Bluesky Terms of Service"
 msgstr ""
 
-#: src/components/WelcomeModal.tsx:148
+#: src/components/WelcomeModal.tsx:154
 msgid "Real conversations."
 msgstr ""
 
-#: src/components/WelcomeModal.tsx:146
+#: src/components/WelcomeModal.tsx:152
 msgid "Real people."
 msgstr ""
 
@@ -10949,6 +10994,18 @@ msgstr ""
 #: src/screens/Messages/components/MessageListError.tsx:19
 msgid "Reconnect"
 msgstr ""
+
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:31
+msgid "Reconnect test user"
+msgstr "Reconnect test user"
+
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:23
+msgid "Reconnect your test account"
+msgstr "Reconnect your test account"
+
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:31
+msgid "Reconnecting…"
+msgstr "Reconnecting…"
 
 #. Name for a feature flag
 #: src/analytics/features/index.ts:132
@@ -11670,7 +11727,7 @@ msgstr ""
 msgid "Reset password"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:405
+#: src/screens/Login/LoginForm.tsx:415
 msgid "Reset your password by sending a code to your email"
 msgstr "Reset your password by sending a code to your email"
 
@@ -11696,7 +11753,7 @@ msgstr "Restored post"
 msgid "Resync contacts"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:507
+#: src/screens/Login/LoginForm.tsx:517
 msgid "Retries signing in"
 msgstr ""
 
@@ -11714,9 +11771,9 @@ msgstr ""
 #: src/components/moderation/ReportDialog/index.tsx:369
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:56
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:59
-#: src/components/StarterPack/ProfileStarterPacks.tsx:371
-#: src/screens/Login/LoginForm.tsx:506
-#: src/screens/Login/LoginForm.tsx:512
+#: src/components/StarterPack/ProfileStarterPacks.tsx:376
+#: src/screens/Login/LoginForm.tsx:516
+#: src/screens/Login/LoginForm.tsx:522
 #: src/screens/Messages/ChatList.tsx:429
 #: src/screens/Messages/components/MessageListError.tsx:24
 #: src/screens/Messages/Inbox.tsx:210
@@ -11727,6 +11784,8 @@ msgstr ""
 #: src/screens/Onboarding/StepSuggestedStarterpacks/index.tsx:101
 #: src/screens/PostThread/components/ThreadError.tsx:81
 #: src/screens/PostThread/components/ThreadError.tsx:87
+#: src/screens/Search/LocalExplore.tsx:98
+#: src/screens/Search/LocalExplore.tsx:103
 #: src/screens/Signup/BackNextButtons.tsx:54
 #: src/view/com/util/error/ErrorMessage.tsx:55
 #: src/view/com/util/error/ErrorScreen.tsx:91
@@ -11767,6 +11826,10 @@ msgstr "Reveal password"
 #: src/screens/ModerationInbox/components/util/reportActionLabel.ts:20
 msgid "Reviewed, no action taken"
 msgstr "Reviewed, no action taken"
+
+#: src/screens/Search/LocalExplore.tsx:46
+msgid "Rights"
+msgstr "Rights"
 
 #. Accessibility label for the icon-only pill that filters the GIF picker to sad/crying GIFs.
 #: src/features/gifPicker/components/GifCategoryPills.tsx:75
@@ -11913,6 +11976,7 @@ msgid "Scan QR code"
 msgstr "Scan QR code"
 
 #: src/lib/interests.ts:71
+#: src/screens/Search/LocalExplore.tsx:45
 msgid "Science"
 msgstr ""
 
@@ -11940,9 +12004,9 @@ msgstr ""
 #: src/components/forms/SearchInput.tsx:59
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:218
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:224
-#: src/screens/Search/Shell.tsx:549
-#: src/screens/Search/Shell.tsx:612
-#: src/screens/Search/Shell.tsx:753
+#: src/screens/Search/Shell.tsx:550
+#: src/screens/Search/Shell.tsx:613
+#: src/screens/Search/Shell.tsx:761
 #: src/view/shell/bottom-bar/BottomBar.tsx:220
 msgid "Search"
 msgstr ""
@@ -12372,7 +12436,7 @@ msgstr "Sent at {0}"
 msgid "Sent to our phone number verification provider Plivo"
 msgstr ""
 
-#: src/components/dialogs/ServerInput.tsx:174
+#: src/components/dialogs/ServerInput.tsx:175
 #: src/screens/Login/components/HostingProviderDialog.tsx:200
 msgid "Server address"
 msgstr ""
@@ -12406,11 +12470,11 @@ msgstr ""
 msgid "Set your birthdate below and we'll get you back to posting and exploring in no time!"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:346
+#: src/screens/Login/LoginForm.tsx:356
 msgid "set your hosting provider manually"
 msgstr "set your hosting provider manually"
 
-#: src/screens/Login/LoginForm.tsx:461
+#: src/screens/Login/LoginForm.tsx:471
 msgid "Set your hosting provider manually"
 msgstr "Set your hosting provider manually"
 
@@ -12571,8 +12635,8 @@ msgstr ""
 msgid "Share this feed"
 msgstr ""
 
-#: src/screens/Search/Shell.tsx:565
-#: src/screens/Search/Shell.tsx:634
+#: src/screens/Search/Shell.tsx:566
+#: src/screens/Search/Shell.tsx:635
 msgid "Share this search"
 msgstr "Share this search"
 
@@ -12775,14 +12839,14 @@ msgstr ""
 
 #: src/components/dialogs/Signin.tsx:98
 #: src/components/dialogs/Signin.tsx:100
-#: src/components/WelcomeModal.tsx:197
-#: src/components/WelcomeModal.tsx:208
+#: src/components/WelcomeModal.tsx:205
+#: src/components/WelcomeModal.tsx:216
 #: src/screens/Hashtag.tsx:233
 #: src/screens/Login/index.tsx:143
 #: src/screens/Login/index.tsx:165
-#: src/screens/Login/LoginForm.tsx:269
-#: src/screens/Login/LoginForm.tsx:529
-#: src/screens/Login/LoginForm.tsx:535
+#: src/screens/Login/LoginForm.tsx:271
+#: src/screens/Login/LoginForm.tsx:539
+#: src/screens/Login/LoginForm.tsx:545
 #: src/screens/Messages/JoinRequest.tsx:298
 #: src/screens/Messages/JoinRequest.tsx:304
 #: src/screens/Search/SearchResults.tsx:399
@@ -12792,10 +12856,10 @@ msgstr ""
 #: src/view/com/auth/SplashScreen.web.tsx:130
 #: src/view/shell/bottom-bar/BottomBar.tsx:364
 #: src/view/shell/bottom-bar/BottomBar.tsx:368
-#: src/view/shell/bottom-bar/BottomBarWeb.tsx:258
-#: src/view/shell/bottom-bar/BottomBarWeb.tsx:263
-#: src/view/shell/NavSignupCard.tsx:58
-#: src/view/shell/NavSignupCard.tsx:63
+#: src/view/shell/bottom-bar/BottomBarWeb.tsx:261
+#: src/view/shell/bottom-bar/BottomBarWeb.tsx:266
+#: src/view/shell/NavSignupCard.tsx:66
+#: src/view/shell/NavSignupCard.tsx:71
 msgid "Sign in"
 msgstr ""
 
@@ -12803,6 +12867,11 @@ msgstr ""
 #: src/components/AccountList.tsx:135
 msgid "Sign in as {0}"
 msgstr ""
+
+#: src/components/DemoAccess.web.tsx:90
+#: src/components/DemoAccess.web.tsx:99
+msgid "Sign in as test user"
+msgstr "Sign in as test user"
 
 #: src/screens/Login/ChooseAccountForm.tsx:83
 msgid "Sign in as…"
@@ -12838,7 +12907,7 @@ msgstr "Sign in to request access to this group chat."
 msgid "Sign in to view post"
 msgstr ""
 
-#: src/ageAssurance/components/DataUnavailableScreen.tsx:22
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:55
 #: src/screens/Settings/Settings.tsx:297
 #: src/screens/Settings/Settings.tsx:299
 #: src/screens/Settings/Settings.tsx:331
@@ -12860,7 +12929,7 @@ msgstr ""
 msgid "Sign out?"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:547
+#: src/screens/Login/LoginForm.tsx:557
 msgid "Sign up"
 msgstr "Sign up"
 
@@ -12874,6 +12943,10 @@ msgstr ""
 #: src/screens/Login/ChooseAccountForm.tsx:54
 msgid "Signed in as @{0}"
 msgstr ""
+
+#: src/components/DemoAccess.web.tsx:97
+msgid "Signing in…"
+msgstr "Signing in…"
 
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:299
 #: src/screens/Search/components/AdvancedSearchDialog/index.tsx:302
@@ -12919,7 +12992,7 @@ msgstr "slide"
 msgid "Smaller"
 msgstr ""
 
-#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
+#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:90
 msgid "Snoozes the reminder"
 msgstr ""
 
@@ -12927,7 +13000,7 @@ msgstr ""
 msgid "So many thoughts, you should post one"
 msgstr ""
 
-#: src/components/WelcomeModal.tsx:150
+#: src/components/WelcomeModal.tsx:156
 msgid "Social media you control."
 msgstr ""
 
@@ -13078,6 +13151,7 @@ msgid "Spam or other inauthentic behavior or deception"
 msgstr ""
 
 #: src/lib/interests.ts:72
+#: src/screens/Search/LocalExplore.tsx:48
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:244
 msgid "Sports"
 msgstr ""
@@ -13145,7 +13219,7 @@ msgid "Starter pack by {handle}"
 msgstr "Starter pack by {handle}"
 
 #. placeholder {0}: creator.handle
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:193
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:197
 msgid "Starter Pack by @{0}"
 msgstr "Starter Pack by @{0}"
 
@@ -13172,7 +13246,7 @@ msgstr "Starter pack unavailable"
 msgid "Starter Packs"
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:294
+#: src/components/StarterPack/ProfileStarterPacks.tsx:299
 msgid "Starter Packs let you easily share your favorite feeds and people with your friends."
 msgstr "Starter Packs let you easily share your favorite feeds and people with your friends."
 
@@ -13199,7 +13273,7 @@ msgstr "Status unavailable"
 #. placeholder {1}: state.serviceDescription && !state.serviceDescription.phoneVerificationRequired ? '2' : '3'
 #. placeholder {1}: state.totalSteps
 #: src/screens/Onboarding/Layout.tsx:296
-#: src/screens/Signup/index.tsx:181
+#: src/screens/Signup/index.tsx:184
 msgid "Step {0} of {1}"
 msgstr ""
 
@@ -13694,7 +13768,7 @@ msgstr ""
 msgid "The Discover feed now knows what you like"
 msgstr ""
 
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:324
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:328
 msgid "The experience is better in the app. Download Bluesky now and we'll pick back up where you left off."
 msgstr ""
 
@@ -13721,6 +13795,10 @@ msgstr ""
 #: src/components/ageAssurance/useAgeAssuranceCopy.ts:23
 msgid "The laws in your region require you to verify you're an adult to access certain features. Tap to learn more."
 msgstr ""
+
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:26
+msgid "The local demo could not reconnect. Please try again in a moment."
+msgstr "The local demo could not reconnect. Please try again in a moment."
 
 #: src/components/intents/GroupChatJoinDialog.tsx:163
 #: src/screens/Messages/JoinRequests.tsx:199
@@ -14610,9 +14688,9 @@ msgstr ""
 
 #: src/screens/Login/ForgotPasswordForm.tsx:70
 #: src/screens/Login/index.tsx:100
-#: src/screens/Login/LoginForm.tsx:162
+#: src/screens/Login/LoginForm.tsx:164
 #: src/screens/Login/SetNewPasswordForm.tsx:82
-#: src/screens/Signup/index.tsx:89
+#: src/screens/Signup/index.tsx:88
 msgid "Unable to contact your service. Please check your Internet connection."
 msgstr ""
 
@@ -14634,7 +14712,7 @@ msgstr "Unable to find a selected recipient."
 msgid "Unable to find the selected recipient."
 msgstr "Unable to find the selected recipient."
 
-#: src/ageAssurance/components/DataUnavailableScreen.tsx:17
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:50
 msgid "Unable to load your account"
 msgstr "Unable to load your account"
 
@@ -15151,11 +15229,11 @@ msgstr ""
 msgid "Username must only contain letters (a-z), numbers, and hyphens"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:300
+#: src/screens/Login/LoginForm.tsx:310
 msgid "Username or email"
 msgstr "Username or email"
 
-#: src/screens/Login/LoginForm.tsx:310
+#: src/screens/Login/LoginForm.tsx:320
 msgid "Username or email address"
 msgstr ""
 
@@ -15629,7 +15707,7 @@ msgstr "We could not connect to the service that provides this custom feed. It m
 msgid "We could not find this list. It was probably deleted."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:342
+#: src/screens/Login/LoginForm.tsx:352
 msgid "We couldn't find an account with that username. Please check that you've typed it correctly, or <0>set your hosting provider manually</0>."
 msgstr "We couldn't find an account with that username. Please check that you've typed it correctly, or <0>set your hosting provider manually</0>."
 
@@ -15653,7 +15731,7 @@ msgstr "We couldn’t load this conversation’s join requests"
 msgid "We couldn’t load this conversation’s settings"
 msgstr "We couldn’t load this conversation’s settings"
 
-#: src/ageAssurance/components/DataUnavailableScreen.tsx:18
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:51
 msgid "We couldn't load your account settings. Check your internet connection and try again."
 msgstr "We couldn't load your account settings. Check your internet connection and try again."
 
@@ -15661,7 +15739,7 @@ msgstr "We couldn't load your account settings. Check your internet connection a
 msgid "We couldn’t reach this link. Check it, or save anyway."
 msgstr "We couldn’t reach this link. Check it, or save anyway."
 
-#: src/screens/Login/LoginForm.tsx:457
+#: src/screens/Login/LoginForm.tsx:467
 msgid "We couldn’t verify your hosting provider. Check your internet connection, or <0>set your hosting provider manually</0>."
 msgstr "We couldn’t verify your hosting provider. Check your internet connection, or <0>set your hosting provider manually</0>."
 
@@ -15804,7 +15882,7 @@ msgstr "We’re having network issues, try again"
 msgid "We’re introducing a new layer of verification on Bluesky — an easy-to-see checkmark."
 msgstr ""
 
-#: src/screens/Signup/index.tsx:140
+#: src/screens/Signup/index.tsx:139
 msgid "We’re so excited to have you join us!"
 msgstr "We’re so excited to have you join us!"
 
@@ -15912,7 +15990,6 @@ msgstr "What you reported"
 msgid "what’s up"
 msgstr "what’s up"
 
-#: src/view/com/auth/SplashScreen.web.tsx:98
 #: src/view/com/composer/Composer.tsx:1624
 #: src/view/com/feeds/ComposerPrompt.tsx:206
 msgid "What's up?"
@@ -16363,7 +16440,7 @@ msgstr ""
 msgid "You have unsaved changes. Would you like to save them before viewing your drafts?"
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:291
+#: src/components/StarterPack/ProfileStarterPacks.tsx:296
 msgid "You haven't created a Starter Pack yet!"
 msgstr "You haven't created a Starter Pack yet!"
 
@@ -16436,7 +16513,7 @@ msgstr "You must be a chat owner to remove a member."
 msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
 msgstr ""
 
-#: src/components/StarterPack/ProfileStarterPacks.tsx:362
+#: src/components/StarterPack/ProfileStarterPacks.tsx:367
 msgid "You must be following at least seven other people to generate a Starter Pack."
 msgstr "You must be following at least seven other people to generate a Starter Pack."
 
@@ -16539,20 +16616,20 @@ msgstr "You won’t be able to rejoin unless you’re invited."
 msgid "You: {message}"
 msgstr "You: {message}"
 
-#: src/screens/Signup/index.tsx:155
+#: src/screens/Signup/index.tsx:158
 msgid "You'll follow the suggested users and feeds once you finish creating your account!"
 msgstr ""
 
-#: src/screens/Signup/index.tsx:160
+#: src/screens/Signup/index.tsx:163
 msgid "You'll follow the suggested users once you finish creating your account!"
 msgstr ""
 
 #. placeholder {0}: listItemsCount - 8
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:235
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:239
 msgid "You'll follow these people and {0} others"
 msgstr ""
 
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:233
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:237
 msgid "You'll follow these people right away"
 msgstr ""
 
@@ -16565,7 +16642,7 @@ msgstr ""
 msgid "You'll start receiving notifications for {0}!"
 msgstr ""
 
-#: src/screens/StarterPack/StarterPackLandingScreen.tsx:273
+#: src/screens/StarterPack/StarterPackLandingScreen.tsx:277
 msgid "You'll stay updated with these feeds"
 msgstr ""
 
@@ -16653,7 +16730,7 @@ msgstr "Your ability to submit reports was restricted"
 
 #: src/screens/ModerationInbox/components/util/noticeLabels.ts:88
 #: src/screens/ModerationInbox/index.tsx:117
-#: src/screens/Signup/index.tsx:191
+#: src/screens/Signup/index.tsx:194
 msgid "Your account"
 msgstr ""
 
@@ -16782,7 +16859,7 @@ msgstr ""
 msgid "Your email appears to be invalid."
 msgstr ""
 
-#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:62
+#: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:66
 msgid "Your email has not yet been verified. Please verify your email in order to enjoy all the features of Bluesky."
 msgstr ""
 
@@ -16916,6 +16993,10 @@ msgstr "Your reports"
 msgctxt "moderation-inbox-setting"
 msgid "Your reports notifications"
 msgstr "Your reports notifications"
+
+#: src/ageAssurance/components/DataUnavailableScreen.tsx:27
+msgid "Your saved test session may be out of date. Reconnect to load the current demo data."
+msgstr "Your saved test session may be out of date. Reconnect to load the current demo data."
 
 #: src/screens/Settings/InterestsSettings.tsx:65
 msgid "Your selected interests help us serve you content you care about."
