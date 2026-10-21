@@ -21,7 +21,7 @@ export function Splash({
   const [isAnimationComplete, setIsAnimationComplete] = useState(false)
   const splashRef = useRef<HTMLDivElement>(null)
 
-  // hide the static one that's baked into the HTML - gets replaced by our React version below
+  // Hide the HTML splash once our React version has painted.
   useEffect(() => {
     // double rAF ensures that the React version gets painted first
     requestAnimationFrame(() => {
@@ -72,6 +72,7 @@ export function Splash({
       {!isAnimationComplete && (
         <div
           ref={splashRef}
+          className="splash-loading"
           style={flattenToCSS([
             a.fixed,
             a.inset_0,

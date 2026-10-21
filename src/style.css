@@ -12,6 +12,24 @@
  * HTML & BODY STYLES IN `web/index.html` and `bskyweb/templates/base.html`
  */
 
+/* Keep the loading animation in sync with both HTML splash templates. */
+@keyframes splash-flutter {
+  0%,
+  100% {
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    transform: translateY(-4px) scaleX(0.45);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .splash-loading svg {
+    animation: splash-flutter 900ms ease-in-out infinite;
+    transform-origin: center;
+  }
+}
+
 /* Buttons and inputs have a font set by UA, so we'll have to reset that */
 button,
 input,
