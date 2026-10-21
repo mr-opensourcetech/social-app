@@ -5,7 +5,7 @@
  */
 
 import {useEffect, useRef, useState} from 'react'
-import Svg, {Path} from 'react-native-svg'
+import Svg, {Defs, LinearGradient, Path, Stop} from 'react-native-svg'
 
 import {atoms as a, flattenToCSS} from '#/alf'
 
@@ -21,7 +21,7 @@ export function Splash({
   const [isAnimationComplete, setIsAnimationComplete] = useState(false)
   const splashRef = useRef<HTMLDivElement>(null)
 
-  // hide the static one that's baked into the HTML - gets replaced by our React version below
+  // Hide the HTML splash once our React version has painted.
   useEffect(() => {
     // double rAF ensures that the React version gets painted first
     requestAnimationFrame(() => {
@@ -72,6 +72,7 @@ export function Splash({
       {!isAnimationComplete && (
         <div
           ref={splashRef}
+          className="splash-loading"
           style={flattenToCSS([
             a.fixed,
             a.inset_0,
@@ -85,8 +86,19 @@ export function Splash({
             fill="none"
             viewBox="0 0 64 57"
             style={[a.relative, {width: size, height: size * ratio, top: -50}]}>
+            <Defs>
+              <LinearGradient
+                id="splash-react-gradient"
+                x1="0%"
+                y1="0%"
+                x2="0%"
+                y2="100%">
+                <Stop offset="0%" stopColor="#FFF4E6" />
+                <Stop offset="100%" stopColor="#F97316" />
+              </LinearGradient>
+            </Defs>
             <Path
-              fill="#006AFF"
+              fill="url(#splash-react-gradient)"
               d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
             />
           </Svg>

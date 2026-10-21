@@ -99,6 +99,21 @@
       top: -50px;
       width: 100px;
     }
+    /* Keep in sync with src/style.css and public/index.html. */
+    @keyframes splash-flutter {
+      0%, 100% {
+        transform: translateY(0) scaleX(1);
+      }
+      50% {
+        transform: translateY(-4px) scaleX(0.45);
+      }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      #splash svg {
+        animation: splash-flutter 900ms ease-in-out infinite;
+        transform-origin: center;
+      }
+    }
     /**
      * We need these styles to prevent shifting due to scrollbar show/hide on
      * OSs that have them enabled by default. This also handles cases where the
@@ -140,7 +155,15 @@
 {%- block body_all %}
   <div id="splash">
     <!-- Bluesky SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57"><path fill="#006AFF" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57">
+      <defs>
+        <linearGradient id="splash-html-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FFF4E6" />
+          <stop offset="100%" stop-color="#F97316" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#splash-html-gradient)" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/>
+    </svg>
   </div>
   <div id="root">
   </div>
