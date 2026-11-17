@@ -46,6 +46,7 @@ import {
   HomeHeaderModeProvider,
   useHomeHeaderMode,
 } from '#/view/com/util/MainScrollProvider'
+import {AdBar} from '#/screens/Home/AdBar'
 import {NoFeedsPinned} from '#/screens/Home/NoFeedsPinned'
 import * as Layout from '#/components/Layout'
 import {useAnalytics} from '#/analytics'
@@ -92,7 +93,10 @@ export function HomeScreen(props: Props) {
 
   if (preferences && pinnedFeedInfos && !isPinnedFeedsLoading) {
     return (
-      <Layout.Screen testID="HomeScreen" noInsetTop={IS_LIQUID_GLASS}>
+      <Layout.Screen
+        testID="HomeScreen"
+        noInsetTop={IS_LIQUID_GLASS}
+        style={IS_WEB ? {paddingBottom: 45} : undefined}>
         <HomeHeaderModeProvider>
           <HomeScreenReady
             {...props}
@@ -100,6 +104,7 @@ export function HomeScreen(props: Props) {
             pinnedFeedInfos={pinnedFeedInfos}
           />
         </HomeHeaderModeProvider>
+        <AdBar />
       </Layout.Screen>
     )
   } else {
@@ -282,6 +287,7 @@ function HomeScreenReady({
         renderTabBar={renderTabBar}
         initialPage={selectedIndex}>
         <FeedPage
+          floatingControlsOffset={IS_WEB ? 45 : 0}
           testID="demoFeedPage"
           isPageFocused
           isPageAdjacent={false}
@@ -290,6 +296,7 @@ function HomeScreenReady({
           feedInfo={pinnedFeedInfos[0]}
         />
         <FeedPage
+          floatingControlsOffset={IS_WEB ? 45 : 0}
           testID="customFeedPage"
           isPageFocused
           isPageAdjacent={false}
@@ -316,6 +323,7 @@ function HomeScreenReady({
           if (feed === 'following') {
             return (
               <FeedPage
+                floatingControlsOffset={IS_WEB ? 45 : 0}
                 key={feed}
                 testID="followingFeedPage"
                 isPageFocused={maybeSelectedFeed === feed}
@@ -331,6 +339,7 @@ function HomeScreenReady({
           const savedFeedConfig = feedInfo.savedFeed
           return (
             <FeedPage
+              floatingControlsOffset={IS_WEB ? 45 : 0}
               key={feed}
               testID="customFeedPage"
               isPageFocused={maybeSelectedFeed === feed}
@@ -353,6 +362,7 @@ function HomeScreenReady({
       onPageScrollStateChanged={onPageScrollStateChanged}
       renderTabBar={renderTabBar}>
       <FeedPage
+        floatingControlsOffset={IS_WEB ? 45 : 0}
         testID="customFeedPage"
         isPageFocused
         isPageAdjacent={false}

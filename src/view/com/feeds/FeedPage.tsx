@@ -55,7 +55,9 @@ export function FeedPage({
   renderEndOfFeed,
   savedFeedConfig,
   feedInfo,
+  floatingControlsOffset = 0,
 }: {
+  floatingControlsOffset?: number
   testID?: string
   feed: FeedDescriptor
   feedParams?: FeedParams
@@ -184,6 +186,7 @@ export function FeedPage({
 
       {hasSession && (
         <FAB
+          bottomOffset={floatingControlsOffset}
           testID="composeFAB"
           onPress={onPressCompose}
           icon={<EditBigIcon size="lg" fill={t.palette.white} />}

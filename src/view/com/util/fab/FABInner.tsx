@@ -23,12 +23,20 @@ import {IS_WEB} from '#/env'
 const MIN_HAPTIC_GAP_MS = 50
 
 export interface FABProps extends ComponentProps<typeof Pressable> {
+  bottomOffset?: number
   testID?: string
   icon: JSX.Element
   style?: StyleProp<ViewStyle>
 }
 
-export function FABInner({testID, icon, onPress, style, ...props}: FABProps) {
+export function FABInner({
+  testID,
+  icon,
+  onPress,
+  style,
+  bottomOffset = 0,
+  ...props
+}: FABProps) {
   const insets = useSafeAreaInsets()
   const {gtMobile} = useBreakpoints()
   const t = useTheme()
@@ -48,6 +56,7 @@ export function FABInner({testID, icon, onPress, style, ...props}: FABProps) {
         styles.outer,
         size,
         tabletSpacing,
+        {bottom: tabletSpacing.bottom + bottomOffset},
         !gtMobile && fabMinimalShellTransform,
       ]}>
       <PressableScale

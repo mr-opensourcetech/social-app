@@ -1,0 +1,72 @@
+.home-ad-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  padding: 0 16px;
+  font-size: 13px;
+}
+
+.home-ad-label {
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.home-ad-window {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.home-ad-track {
+  display: flex;
+  width: max-content;
+  animation: home-ad-scroll 28s linear infinite;
+}
+
+.home-ad-copy {
+  flex-shrink: 0;
+  min-width: calc(100vw - 160px);
+  box-sizing: border-box;
+  padding-right: 80px;
+  white-space: nowrap;
+}
+
+.home-ad-track[data-paused='true'],
+.home-ad-bar:hover .home-ad-track,
+.home-ad-bar:focus-within .home-ad-track {
+  animation-play-state: paused;
+}
+
+.home-ad-pause {
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  color: inherit;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+@keyframes home-ad-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-ad-track {
+    animation: none;
+  }
+
+  .home-ad-window {
+    overflow-x: auto;
+  }
+
+  .home-ad-copy[aria-hidden='true'],
+  .home-ad-pause {
+    display: none;
+  }
+}
